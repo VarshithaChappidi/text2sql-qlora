@@ -1,0 +1,1502 @@
+[
+ {
+  "question": "When Essendon played away; where did they play?",
+  "gold": "SELECT venue FROM table_name_50 WHERE away_team = \"essendon\"",
+  "pred": "SELECT venue FROM table_name_50 WHERE away_team = \"essendon\""
+ },
+ {
+  "question": "What is the lowest numbered game against Phoenix with a record of 29-17?",
+  "gold": "SELECT MIN(game) FROM table_name_61 WHERE opponent = \"phoenix\" AND record = \"29-17\"",
+  "pred": "SELECT MIN(game) FROM table_name_61 WHERE opponent = \"phoenix\" AND record = \"29-17\""
+ },
+ {
+  "question": "Who did the Texan's play on Week 4?",
+  "gold": "SELECT opponent FROM table_name_37 WHERE week = \"4\"",
+  "pred": "SELECT opponent FROM table_name_37 WHERE week = \"4\""
+ },
+ {
+  "question": "Which Points have Touchdowns larger than 0, and an Extra points smaller than 0?",
+  "gold": "SELECT SUM(points) FROM table_name_70 WHERE touchdowns > 0 AND extra_points < 0",
+  "pred": "SELECT SUM(points) FROM table_name_70 WHERE touchdowns > 0 AND extra_points < 0"
+ },
+ {
+  "question": "What is the name of the player who is Sco and moving to greenock morton in the summer?",
+  "gold": "SELECT name FROM table_name_83 WHERE nat = \"sco\" AND transfer_window = \"summer\" AND moving_to = \"greenock morton\"",
+  "pred": "SELECT name FROM table_name_83 WHERE nat = \"sco\" AND transfer_window = \"summer\" AND moving_to = \"greenock morton\""
+ },
+ {
+  "question": "Of all the contestants who got voted, what is the contestant number and name of the contestant who got least votes?",
+  "gold": "SELECT T1.contestant_number, T1.contestant_name FROM contestants AS T1 JOIN votes AS T2 ON T1.contestant_number = T2.contestant_number GROUP BY T1.contestant_number ORDER BY COUNT(*) LIMIT 1",
+  "pred": "SELECT T2.contestant_number, T2.contestant_name FROM votes AS T1 JOIN contestants AS T2 ON T1.contestant_number = T2.contestant_number ORDER BY COUNT(*) LIMIT 1"
+ },
+ {
+  "question": "Which venue had the result 7-1?",
+  "gold": "SELECT venue FROM table_name_50 WHERE result = \"7-1\"",
+  "pred": "SELECT venue FROM table_name_50 WHERE result = \"7-1\""
+ },
+ {
+  "question": "What did the tournament that got an A in 1945 get in 1949?",
+  "gold": "SELECT 1949 FROM table_name_22 WHERE 1945 = \"a\"",
+  "pred": "SELECT 1949 FROM table_name_22 WHERE 1945 = \"a\""
+ },
+ {
+  "question": "Find the states where have the colleges whose enrollments are less than the largest size.",
+  "gold": "SELECT DISTINCT state FROM college WHERE enr < (SELECT MAX(enr) FROM college)",
+  "pred": "SELECT state FROM college WHERE enr < (SELECT MAX(enr) FROM college)"
+ },
+ {
+  "question": "What is the name of the episode that had 9.89 million U.S. viewers?",
+  "gold": "SELECT title FROM table_24648983_1 WHERE us_viewers__million_ = \"9.89\"",
+  "pred": "SELECT title FROM table_24648983_1 WHERE us_viewers__million_ = \"9.89\""
+ },
+ {
+  "question": "What are the names of the workshop groups that have bookings with status code \"stop\"?",
+  "gold": "SELECT T2.Store_Name FROM Bookings AS T1 JOIN Drama_Workshop_Groups AS T2 ON T1.Workshop_Group_ID = T2.Workshop_Group_ID WHERE T1.Status_Code = \"stop\"",
+  "pred": "SELECT T2.Store_Name FROM Bookings AS T1 JOIN Drama_Workshop_Groups AS T2 ON T1.Workshop_Group_ID = T2.Workshop_Group_ID WHERE T1.Status_Code = \"Stop\""
+ },
+ {
+  "question": "Where was the opponent Germany?",
+  "gold": "SELECT location FROM table_name_96 WHERE opponenent = \"germany\"",
+  "pred": "SELECT location FROM table_name_96 WHERE opponent = \"germany\""
+ },
+ {
+  "question": "Name the candidates for result of lost renomination democratic loss",
+  "gold": "SELECT candidates FROM table_1342149_24 WHERE result = \"Lost renomination Democratic loss\"",
+  "pred": "SELECT candidates FROM table_1342149_24 WHERE result = \"Lost renomination Democratic loss\""
+ },
+ {
+  "question": "What is the number of party in the arkansas 1 district",
+  "gold": "SELECT COUNT(party) FROM table_1341930_5 WHERE district = \"Arkansas 1\"",
+  "pred": "SELECT COUNT(party) FROM table_1341930_5 WHERE district = \"Arkansas 1\""
+ },
+ {
+  "question": "How many alt names does 1964-011a have?",
+  "gold": "SELECT COUNT(alt_name) FROM table_12141496_1 WHERE id = \"1964-011A\"",
+  "pred": "SELECT COUNT(alt_name) FROM table_12141496_1 WHERE id = \"1964-011A\""
+ },
+ {
+  "question": "Who is the opponent of the game played on November 20, 1995?",
+  "gold": "SELECT opponent FROM table_name_66 WHERE date = \"november 20, 1995\"",
+  "pred": "SELECT opponent FROM table_name_66 WHERE date = \"november 20, 1995\""
+ },
+ {
+  "question": "What is the position of tickets sold/available when the sellout is 82%?",
+  "gold": "SELECT COUNT(tickets_sold___available) FROM table_16331025_2 WHERE sellout___percentage_ = \"82%\"",
+  "pred": "SELECT tickets_sold___available FROM table_16331025_2 WHERE sellout___percentage_ = \"82%\""
+ },
+ {
+  "question": "Which College/Junior/Club Team (League) did the player in round 6 play for?",
+  "gold": "SELECT college_junior_club_team__league_ FROM table_name_98 WHERE round = \"6\"",
+  "pred": "SELECT college_junior_club_team__league_ FROM table_name_98 WHERE round = \"6\""
+ },
+ {
+  "question": "How many in the introduced section had Fokker as a manufacturer, a quantity of 5, and retired later than 1999?",
+  "gold": "SELECT SUM(introduced) FROM table_name_94 WHERE manufacturer = \"fokker\" AND quantity = 5 AND retired > 1999",
+  "pred": "SELECT SUM(introduced) FROM table_name_94 WHERE manufacturer = \"fokker\" AND quantity = 5 AND retired > 1999"
+ },
+ {
+  "question": "Where was the audition venue where Peninha was the guest fourth judge?",
+  "gold": "SELECT audition_venue FROM table_27615445_1 WHERE guest_fourth_judge = \"Peninha\"",
+  "pred": "SELECT audition_venue FROM table_27615445_1 WHERE guest_fourth_judge = \"Peninha\""
+ },
+ {
+  "question": "Who was the runner-up in the Memorial Tournament?",
+  "gold": "SELECT runner_s__up FROM table_1602858_1 WHERE tournament = \"Memorial tournament\"",
+  "pred": "SELECT runner_s__up FROM table_1602858_1 WHERE tournament = \"Memorial\""
+ },
+ {
+  "question": "What is the number of bonus points when there are 2 drawn and the points against is 599?",
+  "gold": "SELECT bonus_points FROM table_name_83 WHERE drawn = \"2\" AND points_against = \"599\"",
+  "pred": "SELECT COUNT(bonus_points) FROM table_name_83 WHERE drawn = \"2\" AND points_against = \"599\""
+ },
+ {
+  "question": "Which game was a Platformer?",
+  "gold": "SELECT game FROM table_name_90 WHERE genre = \"platformer\"",
+  "pred": "SELECT game FROM table_name_90 WHERE genre = \"platformer\""
+ },
+ {
+  "question": "Who was the individual in the event of 1998 Pokljuka?",
+  "gold": "SELECT individual FROM table_name_33 WHERE event = \"1998 pokljuka\"",
+  "pred": "SELECT individual FROM table_name_33 WHERE event = \"1998 pokljuka\""
+ },
+ {
+  "question": "What's the average draft pick number from Carson-Newman College before Round 7?",
+  "gold": "SELECT AVG(pick__number) FROM table_name_21 WHERE college = \"carson-newman\" AND round < 7",
+  "pred": "SELECT AVG(pick__number) FROM table_name_21 WHERE college = \"carson-newman\" AND round < 7"
+ },
+ {
+  "question": "Who was the spouse of the consort who was born as rania al yassin?",
+  "gold": "SELECT spouse_to FROM table_name_27 WHERE born_as = \"rania al yassin\"",
+  "pred": "SELECT spouse_to FROM table_name_27 WHERE born_as = \"rania al yassin\""
+ },
+ {
+  "question": "How many figures for wickets when the strike rate is 54.0?",
+  "gold": "SELECT COUNT(wickets) FROM table_19662262_6 WHERE strike_rate = \"54.0\"",
+  "pred": "SELECT COUNT(wickets) FROM table_19662262_6 WHERE strike_rate = \"54.0\""
+ },
+ {
+  "question": "Who's the Communist ticket with an American Labor ticket of joseph v. o'leary?",
+  "gold": "SELECT communist_ticket FROM table_name_49 WHERE american_labor_ticket = \"joseph v. o'leary\"",
+  "pred": "SELECT communist_ticket FROM table_name_49 WHERE american_labor_ticket = \"joseph v. o'leary\""
+ },
+ {
+  "question": "What is the HDI 2011 of the country with a DI 2011 of 7.63?",
+  "gold": "SELECT hdi_2011 FROM table_name_54 WHERE di_2011 = \"7.63\"",
+  "pred": "SELECT hdi_2011 FROM table_name_54 WHERE di_2011 = \"7.63\""
+ },
+ {
+  "question": "How much Against has Draws of 2, and Losses smaller than 4?",
+  "gold": "SELECT SUM(against) FROM table_name_17 WHERE draws = 2 AND losses < 4",
+  "pred": "SELECT SUM(against) FROM table_name_17 WHERE draws = 2 AND losses < 4"
+ },
+ {
+  "question": "What was Galatasaray score when when he won in 1990 and Trabzonspor was the runner-up?",
+  "gold": "SELECT score FROM table_name_24 WHERE winners = \"galatasaray\" AND runners_up = \"trabzonspor\" AND year = 1990",
+  "pred": "SELECT score FROM table_name_24 WHERE winners = \"galatasaray\" AND runners_up = \"trabzonspor\" AND year = 1990"
+ },
+ {
+  "question": "Who was the runner-up of the competition played at Minikahda Club?",
+  "gold": "SELECT runner_up FROM table_name_55 WHERE venue = \"minikahda club\"",
+  "pred": "SELECT runner_up FROM table_name_55 WHERE venue = \"minikahda club\""
+ },
+ {
+  "question": "What is the catalog number for the Grilled Cheese label?",
+  "gold": "SELECT catalog FROM table_name_33 WHERE label = \"grilled cheese\"",
+  "pred": "SELECT catalog FROM table_name_33 WHERE label = \"grilled cheese\""
+ },
+ {
+  "question": "Which opponent had the result of W 24-14?",
+  "gold": "SELECT opponent FROM table_name_64 WHERE result = \"w 24-14\"",
+  "pred": "SELECT opponent FROM table_name_64 WHERE result = \"w 24-14\""
+ },
+ {
+  "question": "What is the newest season?",
+  "gold": "SELECT MAX(season) FROM table_2140071_7",
+  "pred": "SELECT MAX(season) FROM table_2140071_7"
+ },
+ {
+  "question": "Which Surface has an Opponent(s) of anna-lena gr\u00f6nefeld tatjana malek?",
+  "gold": "SELECT surface FROM table_name_8 WHERE opponent_s_ = \"anna-lena gr\u00f6nefeld tatjana malek\"",
+  "pred": "SELECT surface FROM table_name_8 WHERE opponent_s_ = \"anna-lena gr\u00f6nefeld tatjana malek\""
+ },
+ {
+  "question": "In what TV season did the 3rd season air?",
+  "gold": "SELECT TV AS season FROM table_1348989_2 WHERE season = \"3rd\"",
+  "pred": "SELECT TV FROM table_1348989_2 WHERE season = \"3\""
+ },
+ {
+  "question": "Who ran the fastest lap in the team that competed in Zolder, in which Ferrari was the Constructor?",
+  "gold": "SELECT fastest_lap FROM table_name_39 WHERE constructor = \"ferrari\" AND location = \"zolder\"",
+  "pred": "SELECT fastest_lap FROM table_name_39 WHERE constructor = \"ferrari\" AND location = \"zolder\""
+ },
+ {
+  "question": "What was the NBA draft status for Northeast High School?",
+  "gold": "SELECT nba_draft FROM table_name_7 WHERE school = \"northeast high school\"",
+  "pred": "SELECT nba_draft FROM table_name_7 WHERE school = \"northeast high school\""
+ },
+ {
+  "question": "What is the high Population (total) from 1976 with a (Barcaldine) smaller than 1,780?",
+  "gold": "SELECT MAX(population__total_) FROM table_name_96 WHERE year = 1976 AND _barcaldine_ < 1 OFFSET 780",
+  "pred": "SELECT MAX(population__total_) FROM table_name_96 WHERE year = 1976 AND _barcaldine_ < 1 OFFSET 780"
+ },
+ {
+  "question": "What 1953 has 2 as a 1949, and 3 as 1952?",
+  "gold": "SELECT 1953 FROM table_name_48 WHERE 1949 = \"2\" AND 1952 = \"3\"",
+  "pred": "SELECT 1953 FROM table_name_48 WHERE 1949 = 2 AND 1952 = 3"
+ },
+ {
+  "question": "What is the total number of losses for the over 30 games played?",
+  "gold": "SELECT COUNT(losses) FROM table_name_50 WHERE played > 30",
+  "pred": "SELECT COUNT(losses) FROM table_name_50 WHERE played > 30"
+ },
+ {
+  "question": "Show names for artists without any exhibition.",
+  "gold": "SELECT name FROM artist WHERE NOT artist_id IN (SELECT artist_id FROM exhibition)",
+  "pred": "SELECT name FROM artist WHERE artist_id NOT IN (SELECT artist_id FROM exhibition)"
+ },
+ {
+  "question": "What are the countries of mountains with height bigger than 5000?",
+  "gold": "SELECT Country FROM mountain WHERE Height > 5000",
+  "pred": "SELECT Country FROM mountain WHERE Height > 5000"
+ },
+ {
+  "question": "What is the highest Money ( \u00a3 ), when Player is \"Peter Hedblom\"?",
+  "gold": "SELECT MAX(money___) AS \u00a3__ FROM table_name_95 WHERE player = \"peter hedblom\"",
+  "pred": "SELECT MAX(money___) AS \u00a3 FROM table_name_95 WHERE player = \"peter hedblom\""
+ },
+ {
+  "question": "When was the appointment date for VFL Wolfsburg?",
+  "gold": "SELECT date_of_appointment FROM table_name_72 WHERE team = \"vfl wolfsburg\"",
+  "pred": "SELECT date_of_appointment FROM table_name_72 WHERE team = \"vfl wolfsburg\""
+ },
+ {
+  "question": "What language is the moviein that is on UMP movies network through Sky service?",
+  "gold": "SELECT language FROM table_name_87 WHERE genre = \"movies\" AND service = \"sky\" AND network = \"ump movies\"",
+  "pred": "SELECT language FROM table_name_87 WHERE genre = \"movie\" AND service = \"sky\" AND network = \"ump movies\""
+ },
+ {
+  "question": "What Location has a Design flow (LPM) smaller than 1900, and a Construction Start of 2006 june?",
+  "gold": "SELECT location FROM table_name_40 WHERE design_flow__lpm_ < 1900 AND construction_start = \"2006 june\"",
+  "pred": "SELECT location FROM table_name_40 WHERE design_flow__lpm_ < 1900 AND construction_start = \"2006 june\""
+ },
+ {
+  "question": "What high definition television options are available for Italia 1?",
+  "gold": "SELECT hdtv FROM table_15887683_1 WHERE television_service = \"Italia 1\"",
+  "pred": "SELECT hdtv FROM table_15887683_1 WHERE television_service = \"Italia 1\""
+ },
+ {
+  "question": "Which suffix has the prefix of isothiocyanato- (-ncs)?",
+  "gold": "SELECT suffix FROM table_name_17 WHERE prefix = \"isothiocyanato- (-ncs)\"",
+  "pred": "SELECT suffix FROM table_name_17 WHERE prefix = \"isothiocyanato- (-ncs)\""
+ },
+ {
+  "question": "What is the enrollment at the school of Hamilton community?",
+  "gold": "SELECT AVG(enrollment) FROM table_name_3 WHERE school = \"hamilton community\"",
+  "pred": "SELECT SUM(enrollment) FROM table_name_3 WHERE school = \"hamilton community\""
+ },
+ {
+  "question": "What is the date of return for the program for the program \"Big Brother\"?",
+  "gold": "SELECT date_of_return FROM table_29566606_11 WHERE programme = \"Big Brother\"",
+  "pred": "SELECT date_of_return FROM table_29566606_11 WHERE programme = \"Big Brother\""
+ },
+ {
+  "question": "On what date was Patty Fendick an opponent?",
+  "gold": "SELECT date FROM table_name_95 WHERE opponent = \"patty fendick\"",
+  "pred": "SELECT date FROM table_name_95 WHERE opponent = \"patty fendick\""
+ },
+ {
+  "question": "What position did the player who was with the grizzlies from 2007-2009 play?",
+  "gold": "SELECT position FROM table_name_89 WHERE years_for_grizzlies = \"2007-2009\"",
+  "pred": "SELECT position FROM table_name_89 WHERE years_for_grizzlies = \"2007-2009\""
+ },
+ {
+  "question": "When do all the researcher role staff start to work, and when do they stop working?",
+  "gold": "SELECT date_from, date_to FROM Project_Staff WHERE role_code = 'researcher'",
+  "pred": "SELECT date_from, date_to FROM Project_Staff WHERE role_code = \"Researcher\""
+ },
+ {
+  "question": "what is the analog type for wxmi?",
+  "gold": "SELECT analog FROM table_name_9 WHERE callsign = \"wxmi\"",
+  "pred": "SELECT analog FROM table_name_9 WHERE callsign = \"wxmi\""
+ },
+ {
+  "question": "what's the\u00a0record\u00a0with\u00a0result\u00a0being w 21\u20137",
+  "gold": "SELECT record FROM table_14951643_1 WHERE result = \"W 21\u20137\"",
+  "pred": "SELECT record FROM table_14951643_1 WHERE result = \"W 21\u20137\""
+ },
+ {
+  "question": "What is the market income per capita in a county where the status is distressed and the unemployment rate is at 10.5%? ",
+  "gold": "SELECT market_income_per_capita FROM table_22815568_3 WHERE status = \"Distressed\" AND unemployment_rate = \"10.5%\"",
+  "pred": "SELECT market_income_per_capita FROM table_22815568_3 WHERE status = \"Distressed\" AND unemployment_rate = \"10.5%\""
+ },
+ {
+  "question": "What is Date, when Opponent in Final is \"Guy Forget\"?",
+  "gold": "SELECT date FROM table_name_64 WHERE opponent_in_final = \"guy forget\"",
+  "pred": "SELECT date FROM table_name_64 WHERE opponent_in_final = \"guy forget\""
+ },
+ {
+  "question": "Name the time for saturday 4 march 1995",
+  "gold": "SELECT time FROM table_16388047_1 WHERE date = \"Saturday 4 March 1995\"",
+  "pred": "SELECT time FROM table_16388047_1 WHERE date = \"Saturday 4 March 1995\""
+ },
+ {
+  "question": "What was the lowest win% with an away score of 3-2 in 2011 season?",
+  "gold": "SELECT MIN(win__percentage) FROM table_name_53 WHERE away = \"3-2\" AND season = \"2011\"",
+  "pred": "SELECT MIN(win__percentage) FROM table_name_53 WHERE away = \"3-2\" AND season = \"2011\""
+ },
+ {
+  "question": "how many division  did not qualify for u.s. open cup in 2003",
+  "gold": "SELECT division FROM table_1046170_5 WHERE us_open_cup = \"Did Not Qualify\" AND year = 2003",
+  "pred": "SELECT COUNT(division) FROM table_1046170_5 WHERE us_open_cup = \"Did not qualify\" AND year = 2003"
+ },
+ {
+  "question": "What album is 4:53 long?",
+  "gold": "SELECT album FROM table_name_74 WHERE length = \"4:53\"",
+  "pred": "SELECT album FROM table_name_74 WHERE length = \"4:53\""
+ },
+ {
+  "question": "What are the formats associated with the Atlantic Records label, catalog number 512336?",
+  "gold": "SELECT format_s_ FROM table_name_15 WHERE label = \"atlantic records\" AND catalog = \"512336\"",
+  "pred": "SELECT format_s_ FROM table_name_15 WHERE label = \"atlantic records\" AND catalog = \"512336\""
+ },
+ {
+  "question": "Name the number of naming for anomic aphasia",
+  "gold": "SELECT COUNT(naming) FROM table_2088_1 WHERE type_of_aphasia = \"Anomic aphasia\"",
+  "pred": "SELECT COUNT(naming) FROM table_2088_1 WHERE type_of_aphasia = \"Anomic\""
+ },
+ {
+  "question": "What was the Result F\u2013A on 21 February 2009, when the league position was 1st?",
+  "gold": "SELECT result_f_a FROM table_name_55 WHERE league_position = \"1st\" AND date = \"21 february 2009\"",
+  "pred": "SELECT result_f_a FROM table_name_55 WHERE league_position = \"1st\" AND date = \"21 february 2009\""
+ },
+ {
+  "question": "What is position does Dan O'Sullivan play?",
+  "gold": "SELECT position FROM table_name_58 WHERE player = \"dan o'sullivan\"",
+  "pred": "SELECT position FROM table_name_58 WHERE player = \"dan o'sullivan\""
+ },
+ {
+  "question": "Name the traditional for  \u5c4f\u5357\u53bf",
+  "gold": "SELECT traditional FROM table_2013618_1 WHERE simplified = \"\u5c4f\u5357\u53bf\"",
+  "pred": "SELECT traditional FROM table_2013618_1 WHERE simplified = \"\u5c4f\u5357\u53bf\""
+ },
+ {
+  "question": "Name the district for hugh glasgow",
+  "gold": "SELECT district FROM table_2668352_14 WHERE incumbent = \"Hugh Glasgow\"",
+  "pred": "SELECT district FROM table_2668352_14 WHERE incumbent = \"Hugh Glasgow\""
+ },
+ {
+  "question": "Name the being qualities for having things of friendships, family, relationships with nature",
+  "gold": "SELECT being__qualities_ FROM table_name_20 WHERE having__things_ = \"friendships, family, relationships with nature\"",
+  "pred": "SELECT being__qualities_ FROM table_name_20 WHERE having__things_ = \"friendships, family, relationships with nature\""
+ },
+ {
+  "question": "which number lists the production code as 2j5809",
+  "gold": "SELECT no FROM table_27403436_1 WHERE production_code = \"2J5809\"",
+  "pred": "SELECT no FROM table_27403436_1 WHERE production_code = \"2J5809\""
+ },
+ {
+  "question": "What is listed under try bonus when listed under Tries for is tries for?",
+  "gold": "SELECT try_bonus FROM table_13399573_3 WHERE \"tries_for\" = \"tries_for\"",
+  "pred": "SELECT try_bonus FROM table_13399573_3 WHERE Tries = \"Tries for\""
+ },
+ {
+  "question": "which championship had arantxa s\u00e1nchez vicario todd woodbridge as opponents in the final ",
+  "gold": "SELECT championship FROM table_1918850_2 WHERE opponents_in_the_final = \"Arantxa S\u00e1nchez Vicario Todd Woodbridge\"",
+  "pred": "SELECT championship FROM table_1918850_2 WHERE opponents_in_the_final = \"Antarxa S\u00e1nchez Vicario Todd Woodbridge\""
+ },
+ {
+  "question": "What is the highest tonnage of the ship from norway?",
+  "gold": "SELECT MAX(tonnage) FROM table_name_71 WHERE nationality = \"norway\"",
+  "pred": "SELECT MAX(tonnage) FROM table_name_71 WHERE nationality = \"norway\""
+ },
+ {
+  "question": "What was the date of the game where Esteban Paredes scored 2 goals?",
+  "gold": "SELECT date FROM table_name_62 WHERE goal = 2",
+  "pred": "SELECT date FROM table_name_62 WHERE goal = \"esteban paredes scored 2\""
+ },
+ {
+  "question": "What is the Away team with Newcastle United as the Home team?",
+  "gold": "SELECT away_team FROM table_name_42 WHERE home_team = \"newcastle united\"",
+  "pred": "SELECT away_team FROM table_name_42 WHERE home_team = \"newcastle united\""
+ },
+ {
+  "question": "what was the competitoin where the opponent is sheffield scimitars?",
+  "gold": "SELECT competition FROM table_17120964_9 WHERE opponent = \"Sheffield Scimitars\"",
+  "pred": "SELECT competition FROM table_17120964_9 WHERE opponent = \"Sheffield Scimitars\""
+ },
+ {
+  "question": "Which Circuit has a Winning Driver of hans-joachim stuck, and a Round of 3?",
+  "gold": "SELECT circuit FROM table_name_74 WHERE winning_driver = \"hans-joachim stuck\" AND round = 3",
+  "pred": "SELECT circuit FROM table_name_74 WHERE winning_driver = \"hans-joachim stuck\" AND round = 3"
+ },
+ {
+  "question": "What is the capacity of the mine that is operated by Cyprus Amax minerals?",
+  "gold": "SELECT capacity__thousands_of_metric_tons_ FROM table_name_83 WHERE operator = \"cyprus amax minerals\"",
+  "pred": "SELECT capacity__thousands_of_metric_tons_ FROM table_name_83 WHERE operator = \"cyprus amax minerals\""
+ },
+ {
+  "question": "Who was the Partner in the Algiers 2, Algeria Tournament?",
+  "gold": "SELECT partner FROM table_name_2 WHERE tournament = \"algiers 2, algeria\"",
+  "pred": "SELECT partner FROM table_name_2 WHERE tournament = \"algiers 2, algeria\""
+ },
+ {
+  "question": "WHAT kind of No Result has Wins smaller than 2, and Losses larger than 1?",
+  "gold": "SELECT no_result FROM table_name_2 WHERE wins < 2 AND losses > 1",
+  "pred": "SELECT no_result FROM table_name_2 WHERE wins < 2 AND losses > 1"
+ },
+ {
+  "question": "Who did the Rangers play in a game that was later than 72 when the team record was 39-27-9?",
+  "gold": "SELECT opponent FROM table_name_93 WHERE game > 72 AND record = \"39-27-9\"",
+  "pred": "SELECT opponent FROM table_name_93 WHERE game > 72 AND record = \"39-27-9\""
+ },
+ {
+  "question": "In game 73, what were the total number of high assists?",
+  "gold": "SELECT COUNT(high_assists) FROM table_28768469_10 WHERE game = 73",
+  "pred": "SELECT COUNT(high_assists) FROM table_28768469_10 WHERE game = 73"
+ },
+ {
+  "question": "when deland is the fcsl team and 2008 is the year played who is the mlb team?",
+  "gold": "SELECT mlb_team FROM table_18373863_2 WHERE years_played = \"2008\" AND fcsl_team = \"DeLand\"",
+  "pred": "SELECT mlb_team FROM table_18373863_2 WHERE years_played = \"2008\" AND fcsl_team = \"Deland\""
+ },
+ {
+  "question": "what is the total number of\u00a0kickoff [a ]\u00a0where\u00a0week\u00a0is week",
+  "gold": "SELECT COUNT(kickoff_)[a_] FROM table_11406866_2 WHERE \"week\" = \"week\"",
+  "pred": "SELECT COUNT(a_) FROM table_11406866_2 WHERE kickoff_[a_] = \"Week\""
+ },
+ {
+  "question": "What position did he finish in 1987?",
+  "gold": "SELECT position FROM table_2387790_2 WHERE year = 1987",
+  "pred": "SELECT position FROM table_2387790_2 WHERE year = \"1987\""
+ },
+ {
+  "question": "What was Gary Player's highest total when his To par was over 15?",
+  "gold": "SELECT MAX(total) FROM table_name_41 WHERE player = \"gary player\" AND to_par > 15",
+  "pred": "SELECT MAX(total) FROM table_name_41 WHERE player = \"gary player\" AND to_par > 15"
+ },
+ {
+  "question": "What is the total sum of 50m splits for josefin lillhage in lanes above 8?",
+  "gold": "SELECT SUM(split__50m_) FROM table_name_24 WHERE name = \"josefin lillhage\" AND lane > 8",
+  "pred": "SELECT SUM(split__50m_) FROM table_name_24 WHERE name = \"josefin lillhage\" AND lane > 8"
+ },
+ {
+  "question": "Where has Jimmy Demaret as a player?",
+  "gold": "SELECT place FROM table_name_94 WHERE player = \"jimmy demaret\"",
+  "pred": "SELECT place FROM table_name_94 WHERE player = \"jimmy demaret\""
+ },
+ {
+  "question": "What is the total number of Goals scored that has more than 45 Points?",
+  "gold": "SELECT COUNT(goals_scored) FROM table_name_74 WHERE points > 45",
+  "pred": "SELECT COUNT(goals_scored) FROM table_name_74 WHERE points > 45"
+ },
+ {
+  "question": "How did the game number 50 end?",
+  "gold": "SELECT score FROM table_23248940_9 WHERE game = 50",
+  "pred": "SELECT score FROM table_23248940_9 WHERE game = 50"
+ },
+ {
+  "question": "What player has a round larger than 2, and position of (d)?",
+  "gold": "SELECT player FROM table_name_20 WHERE round > 2 AND position = \"(d)\"",
+  "pred": "SELECT player FROM table_name_20 WHERE round > 2 AND position = \"(d)\""
+ },
+ {
+  "question": "What was sweden's score in T9 place?",
+  "gold": "SELECT score FROM table_name_27 WHERE place = \"t9\" AND country = \"sweden\"",
+  "pred": "SELECT score FROM table_name_27 WHERE place = \"t9\" AND country = \"sweden\""
+ },
+ {
+  "question": "What was the Attendance on November 26?",
+  "gold": "SELECT attendance FROM table_name_98 WHERE date = \"november 26\"",
+  "pred": "SELECT attendance FROM table_name_98 WHERE date = \"november 26\""
+ },
+ {
+  "question": "Who finished in third place when the winner was Karina Bacchi? ",
+  "gold": "SELECT third_place FROM table_25214321_1 WHERE winner = \"Karina Bacchi\"",
+  "pred": "SELECT third_place FROM table_25214321_1 WHERE winner = \"Karina Bacchi\""
+ },
+ {
+  "question": "When is the date of appointment when the position in table is 16?",
+  "gold": "SELECT date_of_appointment FROM table_27383390_4 WHERE position_in_table = 16",
+  "pred": "SELECT date_of_appointment FROM table_27383390_4 WHERE position_in_table = \"16\""
+ },
+ {
+  "question": "What is Date, when Outcome is \"Winner\", and when Opponents is \"Paul Haarhuis Sandon Stolle\"?",
+  "gold": "SELECT date FROM table_name_48 WHERE outcome = \"winner\" AND opponents = \"paul haarhuis sandon stolle\"",
+  "pred": "SELECT date FROM table_name_48 WHERE outcome = \"winner\" AND opponents = \"paul haarhuis sandon stolle\""
+ },
+ {
+  "question": "What is the location of the Saints having 1979- as Years in GFL?",
+  "gold": "SELECT location FROM table_name_37 WHERE years_in_gfl = \"1979-\" AND nickname = \"saints\"",
+  "pred": "SELECT location FROM table_name_37 WHERE years_in_gfl = \"1979-\" AND nickname = \"saints\""
+ },
+ {
+  "question": "Who was the Team that was played against on February 24 and a game after game 55?",
+  "gold": "SELECT team FROM table_name_61 WHERE game > 55 AND date = \"february 24\"",
+  "pred": "SELECT team FROM table_name_61 WHERE game > 55 AND date = \"february 24\""
+ },
+ {
+  "question": "Who is the monarch with the heir thado minsaw?",
+  "gold": "SELECT monarch FROM table_26460435_8 WHERE heir = \"Thado Minsaw\"",
+  "pred": "SELECT monarch FROM table_26460435_8 WHERE heir = \"Thado Minsaw\""
+ },
+ {
+  "question": "Can you tell me the lowest Long that has the Gain of 20, and the Loss smaller than 0?",
+  "gold": "SELECT MIN(long) FROM table_name_19 WHERE gain = 20 AND loss < 0",
+  "pred": "SELECT MIN(long) FROM table_name_19 WHERE gain = 20 AND loss < 0"
+ },
+ {
+  "question": "What was the record for the Argonauts on September 7?",
+  "gold": "SELECT record FROM table_24136814_3 WHERE date = \"September 7\"",
+  "pred": "SELECT record FROM table_24136814_3 WHERE date = \"September 7\""
+ },
+ {
+  "question": "Where has a cause of gas explosion, a Death toll larger than 38 on 10 june?",
+  "gold": "SELECT location FROM table_name_97 WHERE cause = \"gas explosion\" AND death_toll > 38 AND date = \"10 june\"",
+  "pred": "SELECT location FROM table_name_97 WHERE cause = \"gas explosion\" AND death_toll > 38 AND date = \"10 june\""
+ },
+ {
+  "question": "I want the constructor for divina galica rounds of 1-2",
+  "gold": "SELECT constructor FROM table_name_54 WHERE rounds = \"1-2\" AND driver = \"divina galica\"",
+  "pred": "SELECT constructor FROM table_name_54 WHERE rounds = \"1-2\" AND driver = \"divina galica\""
+ },
+ {
+  "question": "How many attended the game at Arden Street Oval?",
+  "gold": "SELECT AVG(crowd) FROM table_name_86 WHERE venue = \"arden street oval\"",
+  "pred": "SELECT SUM(crowd) FROM table_name_86 WHERE venue = \"arden street oval\""
+ },
+ {
+  "question": "What is the home team of lake oval's score?",
+  "gold": "SELECT home_team AS score FROM table_name_57 WHERE venue = \"lake oval\"",
+  "pred": "SELECT home_team FROM table_name_57 WHERE venue = \"lake oval\""
+ },
+ {
+  "question": "There is a building at 800 Boylston Street, how many floors does it have?",
+  "gold": "SELECT SUM(floors) FROM table_name_81 WHERE street_address = \"800 boylston street\"",
+  "pred": "SELECT SUM(floors) FROM table_name_81 WHERE street_address = \"800 boylston street\""
+ },
+ {
+  "question": "How many cuts did Reid make in the year when her earnings were n/a?",
+  "gold": "SELECT MAX(cuts_made) FROM table_29506171_2 WHERE earnings___\u20ac__ = \"n/a\"",
+  "pred": "SELECT MIN(cuts_made) FROM table_29506171_2 WHERE earnings___\u20ac__ = \"N/A\""
+ },
+ {
+  "question": "what year was william francis stevenson first elected?",
+  "gold": "SELECT first_elected FROM table_1342370_39 WHERE incumbent = \"William Francis Stevenson\"",
+  "pred": "SELECT first_elected FROM table_1342370_39 WHERE incumbent = \"William Francis Stevenson\""
+ },
+ {
+  "question": "What is the average goals scored when less than 34 were played and there were more than 2 draws?",
+  "gold": "SELECT AVG(goals_scored) FROM table_name_78 WHERE played < 34 AND draw > 2",
+  "pred": "SELECT AVG(goals_scored) FROM table_name_78 WHERE played < 34 AND draw > 2"
+ },
+ {
+  "question": "In Round 10, what was the Overall for Ed Tomlin?",
+  "gold": "SELECT AVG(overall) FROM table_name_45 WHERE round = 10 AND name = \"ed tomlin\"",
+  "pred": "SELECT SUM(overall) FROM table_name_45 WHERE round = \"10\" AND name = \"ed tomlin\""
+ },
+ {
+  "question": "What is the distinguished service cross when the navy cross is Coast Guard commendation medal?",
+  "gold": "SELECT distinguished_service_cross FROM table_2104176_1 WHERE navy_cross = \"Coast Guard Commendation Medal\"",
+  "pred": "SELECT distinguished_service_cross FROM table_2104176_1 WHERE navy_cross = \"Coast Guard commendation medal\""
+ },
+ {
+  "question": "What is the total of the Divison that is from the country Serbia and Montenegro with apps smaller than 12 with more goals than 0?",
+  "gold": "SELECT SUM(division) FROM table_name_69 WHERE country = \"serbia and montenegro\" AND apps < 12 AND goals > 0",
+  "pred": "SELECT SUM(division) FROM table_name_69 WHERE country = \"serbia and montenegro\" AND apps < 12 AND goals > 0"
+ },
+ {
+  "question": "What is the birth place of the prime minister who served George V and entered office on 23 October 1922?",
+  "gold": "SELECT birth_place FROM table_name_83 WHERE monarchs_served = \"george v\" AND entered_office = \"23 october 1922\"",
+  "pred": "SELECT birth_place FROM table_name_83 WHERE monarchs_served = \"george v\" AND entered_office = \"23 october 1922\""
+ },
+ {
+  "question": "What driver has 5 as the zan 2?",
+  "gold": "SELECT driver FROM table_name_69 WHERE zan_2 = \"5\"",
+  "pred": "SELECT driver FROM table_name_69 WHERE zan_2 = \"5\""
+ },
+ {
+  "question": "Which Commercial Operation has both a Gross Capacity of 417 mw and an Electricity Grid 27.12.1971?",
+  "gold": "SELECT commercial_operation FROM table_name_48 WHERE gross_capacity = \"417 mw\" AND electricity_grid = \"27.12.1971\"",
+  "pred": "SELECT commercial_operation FROM table_name_48 WHERE gross_capacity = \"417 mw\" AND electricity_grid = \"27.12.1971\""
+ },
+ {
+  "question": "Who is the player who played for the Miami Sol and went to school at North Carolina State?",
+  "gold": "SELECT player FROM table_name_62 WHERE new_wnba_team = \"miami sol\" AND college_country_team = \"north carolina state\"",
+  "pred": "SELECT player FROM table_name_62 WHERE new_wnba_team = \"miami sol\" AND college_country_team = \"north carolina state\""
+ },
+ {
+  "question": "Which terminations correspond to a US MSRP of $49?",
+  "gold": "SELECT termination FROM table_1601027_1 WHERE us_msrp = \"$49\"",
+  "pred": "SELECT termination FROM table_1601027_1 WHERE us_msrp = \"$49\""
+ },
+ {
+  "question": "What is the area in kilometers squared the population density is 137.61?",
+  "gold": "SELECT area__km\u00b2_ FROM table_14325808_1 WHERE density__pop_km\u00b2_ = \"137.61\"",
+  "pred": "SELECT area__km\u00b2_ FROM table_14325808_1 WHERE density__pop_km\u00b2_ = \"137.61\""
+ },
+ {
+  "question": "Smaller than 4, and a Silver larger than 0, and a Rank of 3, and a Bronze smaller than 6 then what is the sum of the gold?",
+  "gold": "SELECT SUM(total) FROM table_name_77 WHERE gold < 4 AND silver > 0 AND rank = \"3\" AND bronze < 6",
+  "pred": "SELECT SUM(gold) FROM table_name_77 WHERE silver > 0 AND rank = \"3\" AND bronze < 6 AND total < 4"
+ },
+ {
+  "question": "Name the most rank for wins outdoor larger than 1 and wins indoor less than 0",
+  "gold": "SELECT MAX(rank) FROM table_name_87 WHERE wins__outdoor_ > 1 AND wins__indoor_ < 0",
+  "pred": "SELECT MAX(rank) FROM table_name_87 WHERE wins__outdoor_ > 1 AND wins__indoor_ < 0"
+ },
+ {
+  "question": "Which parts have more than 2 faults? Show the part name and id.",
+  "gold": "SELECT T1.part_name, T1.part_id FROM Parts AS T1 JOIN Part_Faults AS T2 ON T1.part_id = T2.part_id GROUP BY T1.part_id HAVING COUNT(*) > 2",
+  "pred": "SELECT T1.part_name, T1.part_id FROM Parts AS T1 JOIN Part_Faults AS T2 ON T1.part_id = T2.part_id GROUP BY T1.part_id HAVING COUNT(*) > 2"
+ },
+ {
+  "question": "Who is the winning team of the South Pacific Trophy?",
+  "gold": "SELECT winning_team FROM table_name_22 WHERE name = \"south pacific trophy\"",
+  "pred": "SELECT winning_team FROM table_name_22 WHERE name = \"south pacific trophy\""
+ },
+ {
+  "question": "what is the score when the runner-up is richard krajicek?",
+  "gold": "SELECT score FROM table_name_54 WHERE runner_up = \"richard krajicek\"",
+  "pred": "SELECT score FROM table_name_54 WHERE runner_up = \"richard krajicek\""
+ },
+ {
+  "question": "What is the Accreditation Level, when the Hardware Model is GT-I9100?",
+  "gold": "SELECT accreditation_level FROM table_name_7 WHERE hardware_model = \"gt-i9100\"",
+  "pred": "SELECT accreditation_level FROM table_name_7 WHERE hardware_model = \"gt-i9100\""
+ },
+ {
+  "question": "What was the attendance for St Andrew's?",
+  "gold": "SELECT attendance FROM table_name_17 WHERE venue = \"st andrew's\"",
+  "pred": "SELECT attendance FROM table_name_17 WHERE venue = \"st andrew's\""
+ },
+ {
+  "question": "Who is the opponent in the final of the match on 19 February 2006?",
+  "gold": "SELECT opponent_in_the_final FROM table_name_24 WHERE date = \"19 february 2006\"",
+  "pred": "SELECT opponent_in_the_final FROM table_name_24 WHERE date = \"19 february 2006\""
+ },
+ {
+  "question": "What was the record on the game that was played on october 27?",
+  "gold": "SELECT record FROM table_name_72 WHERE date = \"october 27\"",
+  "pred": "SELECT record FROM table_name_72 WHERE date = \"october 27\""
+ },
+ {
+  "question": "What is the average Gold where the Nation is Russia (rus) and the number of silver is less than 2?",
+  "gold": "SELECT AVG(gold) FROM table_name_99 WHERE nation = \"russia (rus)\" AND silver < 2",
+  "pred": "SELECT AVG(gold) FROM table_name_99 WHERE nation = \"russia (rus)\" AND silver < 2"
+ },
+ {
+  "question": "When was the elector from pisa elevated?",
+  "gold": "SELECT elevated FROM table_name_13 WHERE nationality = \"pisa\"",
+  "pred": "SELECT elevated FROM table_name_13 WHERE nationality = \"pisa\""
+ },
+ {
+  "question": "What is the name of the church that is located in eikefjord?",
+  "gold": "SELECT church_name FROM table_name_8 WHERE location_of_the_church = \"eikefjord\"",
+  "pred": "SELECT church_name FROM table_name_8 WHERE location_of_the_church = \"eikefjord\""
+ },
+ {
+  "question": "Name the least week for september 19, 1976",
+  "gold": "SELECT MIN(week) FROM table_14945881_1 WHERE date = \"September 19, 1976\"",
+  "pred": "SELECT MIN(week) FROM table_14945881_1 WHERE date = \"September 19, 1976\""
+ },
+ {
+  "question": "Who was the Builder for the locomotive that has a works number of 323?",
+  "gold": "SELECT builder FROM table_name_92 WHERE works_number = \"323\"",
+  "pred": "SELECT builder FROM table_name_92 WHERE works_number = \"323\""
+ },
+ {
+  "question": "What is the date of the game at the Pro Player Stadium that had a score of 4-1?",
+  "gold": "SELECT date FROM table_name_43 WHERE venue = \"pro player stadium\" AND score = \"4-1\"",
+  "pred": "SELECT date FROM table_name_43 WHERE venue = \"pro player stadium\" AND score = \"4-1\""
+ },
+ {
+  "question": "What i/o buses are associated with the LGA 1155 socket, a code name of Sandy Bridge (desktop) and a brand name of Core i3-21xx?",
+  "gold": "SELECT i_o_bus FROM table_24538587_11 WHERE socket = \"LGA 1155\" AND codename__main_article_ = \"Sandy Bridge (Desktop)\" AND brand_name__list_ = \"Core i3-21xx\"",
+  "pred": "SELECT i_o_bus FROM table_24538587_11 WHERE socket = \"LGA 1155\" AND codename__main_article_ = \"Sandy Bridge (Desktop)\" AND brand_name__list_ = \"Core i3-21xx\""
+ },
+ {
+  "question": "How many goals have a goal ration less than 0.8 with 56 games?",
+  "gold": "SELECT COUNT(goals) FROM table_name_49 WHERE goal_ratio < 0.8 AND games = 56",
+  "pred": "SELECT COUNT(goals) FROM table_name_49 WHERE goal_ratio < 0.8 AND games = 56"
+ },
+ {
+  "question": "What was the result of the competition that had a score of 4-0?",
+  "gold": "SELECT result FROM table_name_95 WHERE score = \"4-0\"",
+  "pred": "SELECT result FROM table_name_95 WHERE score = \"4-0\""
+ },
+ {
+  "question": "What is the date of enrollment of the course named \"Spanish\"?",
+  "gold": "SELECT T2.date_of_enrolment FROM Courses AS T1 JOIN Student_Course_Enrolment AS T2 ON T1.course_id = T2.course_id WHERE T1.course_name = \"Spanish\"",
+  "pred": "SELECT T1.date_of_enrolment FROM Student_Course_Enrolment AS T1 JOIN Courses AS T2 ON T1.course_id = T2.course_id WHERE T2.course_name = \"Spanish\""
+ },
+ {
+  "question": "Name the % asian american for 23526",
+  "gold": "SELECT _percentage_asian_american FROM table_18963843_1 WHERE indian_american_population__2010_ = 23526",
+  "pred": "SELECT _percentage_asian_american FROM table_18963843_1 WHERE indian_american_population__2010_ = \"23526\""
+ },
+ {
+  "question": "Which team had $15,785 in winnings?",
+  "gold": "SELECT team_s_ FROM table_26609690_1 WHERE winnings = \"$15,785\"",
+  "pred": "SELECT team_s_ FROM table_26609690_1 WHERE winnings = \"$15,785\""
+ },
+ {
+  "question": "What's the ratings of TBS of Episode 10 and had a Japanese title of Scandal?",
+  "gold": "SELECT average_ratings FROM table_name_76 WHERE tv_station = \"tbs\" AND episodes = \"10\" AND japanese_title = \"scandal\"",
+  "pred": "SELECT average_ratings FROM table_name_76 WHERE tv_station = \"tbs\" AND episodes = 10 AND japanese_title = \"scandal\""
+ },
+ {
+  "question": "what is the maximum\u00a0pick #\u00a0where\u00a0player\u00a0is anthony blaylock",
+  "gold": "SELECT MAX(pick__number) FROM table_10650711_1 WHERE player = \"Anthony Blaylock\"",
+  "pred": "SELECT MAX(pick__number) FROM table_10650711_1 WHERE player = \"Anthony Blaylock\""
+ },
+ {
+  "question": "What is the average expenditures on R&D for Croatia after 2007?",
+  "gold": "SELECT AVG(expenditures_on_r) & d__billions_of_us$_, _ppp__ FROM table_name_32 WHERE country_region = \"croatia\" AND year > 2007",
+  "pred": "SELECT AVG(expenditures_on_r) FROM table_name_32 WHERE country_region = \"croatia\" AND year > 2007"
+ },
+ {
+  "question": "What episode in the series is TV broadcast s03e20?",
+  "gold": "SELECT no_in_series FROM table_15861776_1 WHERE tv_broadcast = \"S03E20\"",
+  "pred": "SELECT no_in_series FROM table_15861776_1 WHERE tv_broadcast = \"S03E20\""
+ },
+ {
+  "question": "What position has a time less than 40.2 at the rome venue?",
+  "gold": "SELECT position FROM table_name_69 WHERE venue = \"rome\" AND time < 40.2",
+  "pred": "SELECT position FROM table_name_69 WHERE venue = \"rome\" AND time < 40.2"
+ },
+ {
+  "question": "Which Region has a Date of early september 1999?",
+  "gold": "SELECT region FROM table_name_15 WHERE date = \"early september 1999\"",
+  "pred": "SELECT region FROM table_name_15 WHERE date = \"early september 1999\""
+ },
+ {
+  "question": "What was the Opponent when the Cavaliers had a Record of 3-9?",
+  "gold": "SELECT opponent FROM table_name_10 WHERE record = \"3-9\"",
+  "pred": "SELECT opponent FROM table_name_10 WHERE record = \"3-9\""
+ },
+ {
+  "question": "What was Liu Limin's time in heat 4?",
+  "gold": "SELECT time FROM table_name_32 WHERE heat = 4 AND name = \"liu limin\"",
+  "pred": "SELECT time FROM table_name_32 WHERE heat = \"4\" AND name = \"liu limin\""
+ },
+ {
+  "question": "Which Driver has a Grid smaller than 17, and Points larger than 0, and a Lapse of 87, and a Time/Retired of 1:48:11.023?",
+  "gold": "SELECT driver FROM table_name_72 WHERE grid < 17 AND points > 0 AND laps = 87 AND time_retired = \"1:48:11.023\"",
+  "pred": "SELECT driver FROM table_name_72 WHERE grid < 17 AND points > 0 AND laps = 87 AND time_retired = \"1:48:11.023\""
+ },
+ {
+  "question": "What is the route of administration that has several ongoing and complete?",
+  "gold": "SELECT route_of_administration FROM table_name_4 WHERE status = \"several ongoing and complete\"",
+  "pred": "SELECT route_of_administration FROM table_name_4 WHERE status = \"several ongoing and complete\""
+ },
+ {
+  "question": "What is teh average amount of goals for club real avil\u00e9s cf, which has more than 59 goals against and a -10 goal difference?",
+  "gold": "SELECT AVG(goals_for) FROM table_name_53 WHERE goals_against > 59 AND club = \"real avil\u00e9s cf\" AND goal_difference > -10",
+  "pred": "SELECT AVG(goals_for) FROM table_name_53 WHERE goals_against > 59 AND club = \"real avil\u00e9s cf\" AND goal_difference = \"-10\""
+ },
+ {
+  "question": "If the round of 16 was  yulius fernando ( ina ) l pts 5-6, what was the semifinals?",
+  "gold": "SELECT semifinals FROM table_26335424_86 WHERE round_of_16 = \"Yulius Fernando ( INA ) L PTS 5-6\"",
+  "pred": "SELECT semifinals FROM table_26335424_86 WHERE round_of_16 = \"Yulius Fernando ( INA ) L PTS 5-6\""
+ },
+ {
+  "question": "Name the title for total viewers on fx+ being 483,000",
+  "gold": "SELECT title FROM table_26493520_3 WHERE total_viewers_on_fx = \"483,000\"",
+  "pred": "SELECT title FROM table_26493520_3 WHERE total_viewers_on_fx = \"483,000\""
+ },
+ {
+  "question": "What's the Date for the Region of Europe and has the Catalog of 28765 22392 8?",
+  "gold": "SELECT date FROM table_name_70 WHERE region = \"europe\" AND catalog = \"28765 22392 8\"",
+  "pred": "SELECT date FROM table_name_70 WHERE region = \"europe\" AND catalog = \"28765 22392 8\""
+ },
+ {
+  "question": "with rank of 31 what is the year?",
+  "gold": "SELECT COUNT(year) FROM table_name_48 WHERE rank = \"31\"",
+  "pred": "SELECT year FROM table_name_48 WHERE rank = \"31\""
+ },
+ {
+  "question": "Who was the supporting actress in 1943?",
+  "gold": "SELECT supporting_actress FROM table_24225238_1 WHERE year = 1943",
+  "pred": "SELECT supporting_actress FROM table_24225238_1 WHERE year = 1943"
+ },
+ {
+  "question": "What year was the wheel arrangement 0-6-0 and a class 302?",
+  "gold": "SELECT year_made FROM table_name_76 WHERE wheel_arrangement = \"0-6-0\" AND class = \"302\"",
+  "pred": "SELECT year_made FROM table_name_76 WHERE wheel_arrangement = \"0-6-0\" AND class = \"302\""
+ },
+ {
+  "question": "What is the score of the match with a save postponed rescheduled for June 24?",
+  "gold": "SELECT score FROM table_name_97 WHERE save = \"postponed rescheduled for june 24\"",
+  "pred": "SELECT score FROM table_name_97 WHERE save = \"postponed rescheduled for june 24\""
+ },
+ {
+  "question": "How many wins did he have when he played under 2 events?",
+  "gold": "SELECT COUNT(wins) FROM table_name_22 WHERE events < 2",
+  "pred": "SELECT wins FROM table_name_22 WHERE events < 2"
+ },
+ {
+  "question": "Which is the class A when Weslaco was the class AAAAA and brownwood was the class AAAA",
+  "gold": "SELECT class_a FROM table_14747043_1 WHERE class_aAAAA = Weslaco AND class_aAAA = Brownwood",
+  "pred": "SELECT class_a FROM table_14747043_1 WHERE class_aAAAA = \"Weslaco\" AND class_aAAA = \"Brownwood\""
+ },
+ {
+  "question": "What team had less than 159 laps and a time or retired time of 4:00:30.7537 (retired - fire)?",
+  "gold": "SELECT name FROM table_name_14 WHERE laps < 159 AND time_retired = \"4:00:30.7537 (retired - fire)\"",
+  "pred": "SELECT name FROM table_name_14 WHERE laps < 159 AND time_retired = \"4:00:30.7537 (retired - fire)\""
+ },
+ {
+  "question": "What opponent has 76,202 attendance ?",
+  "gold": "SELECT opponent FROM table_name_5 WHERE attendance = \"76,202\"",
+  "pred": "SELECT opponent FROM table_name_5 WHERE attendance = \"76,202\""
+ },
+ {
+  "question": "Bldr of mcw&f, and a Year smaller than 1927, and a LT Nos of 9820-9821 has what type?",
+  "gold": "SELECT type FROM table_name_19 WHERE bldr = \"mcw&f\" AND year < 1927 AND lt_nos = \"9820-9821\"",
+  "pred": "SELECT type FROM table_name_19 WHERE bldr = \"mcw&f\" AND year < 1927 AND lt_nos = \"9820-9821\""
+ },
+ {
+  "question": "What is the Input/output operations per second for the emlc flash?",
+  "gold": "SELECT speed___iops__ FROM table_27615520_1 WHERE storage_medium = \"eMLC Flash\"",
+  "pred": "SELECT speed___iops__ FROM table_27615520_1 WHERE storage_medium = \"EMLC Flash\""
+ },
+ {
+  "question": "Which race was on the Las Vegas Motor Speedway for 2 hours?",
+  "gold": "SELECT race FROM table_name_36 WHERE circuit = \"las vegas motor speedway\" AND length = \"2 hours\"",
+  "pred": "SELECT race FROM table_name_36 WHERE circuit = \"las vegas motor speedway\" AND length = \"2 hours\""
+ },
+ {
+  "question": "What is tom cassidy's nationality?",
+  "gold": "SELECT nationality FROM table_name_25 WHERE player = \"tom cassidy\"",
+  "pred": "SELECT nationality FROM table_name_25 WHERE player = \"tom cassidy\""
+ },
+ {
+  "question": "How many bronzes have a Nation of jamaica (jam), and a Total smaller than 7?",
+  "gold": "SELECT COUNT(bronze) FROM table_name_6 WHERE nation = \"jamaica (jam)\" AND total < 7",
+  "pred": "SELECT COUNT(bronze) FROM table_name_6 WHERE nation = \"jamaica (jam)\" AND total < 7"
+ },
+ {
+  "question": "What position does Jim Johnston play?",
+  "gold": "SELECT position FROM table_1213511_6 WHERE player = \"Jim Johnston\"",
+  "pred": "SELECT position FROM table_1213511_6 WHERE player = \"Jim Johnston\""
+ },
+ {
+  "question": "What is the result of the match in round 1r against tunisia and on a hard surface?",
+  "gold": "SELECT result FROM table_name_37 WHERE round = \"1r\" AND surface = \"hard\" AND against = \"tunisia\"",
+  "pred": "SELECT result FROM table_name_37 WHERE round = \"1r\" AND surface = \"hard\" AND against = \"tunisia\""
+ },
+ {
+  "question": "What round had a record of 4-1?",
+  "gold": "SELECT round FROM table_name_17 WHERE record = \"4-1\"",
+  "pred": "SELECT round FROM table_name_17 WHERE record = \"4-1\""
+ },
+ {
+  "question": "In which host city was Margaret Thatcher the President-in-Office in 1981?",
+  "gold": "SELECT host_city FROM table_name_85 WHERE president_in_office = \"margaret thatcher\" AND year = 1981",
+  "pred": "SELECT host_city FROM table_name_85 WHERE president_in_office = \"margaret thatcher\" AND year = 1981"
+ },
+ {
+  "question": "Which film title used in nomination has the year (ceremony) 1990 (63rd)?",
+  "gold": "SELECT film_title_used_in_nomination FROM table_21655290_1 WHERE year__ceremony_ = \"1990 (63rd)\"",
+  "pred": "SELECT film_title_used_in_nomination FROM table_21655290_1 WHERE year__ceremony_ = \"1990 (63rd)\""
+ },
+ {
+  "question": "When collingwood played as the home team who was the away team?",
+  "gold": "SELECT away_team FROM table_name_88 WHERE home_team = \"collingwood\"",
+  "pred": "SELECT away_team FROM table_name_88 WHERE home_team = \"collingwood\""
+ },
+ {
+  "question": "What is the frequency of the processor with an sSpec number of sl3bn(kc0)sl3e9(kc0)?",
+  "gold": "SELECT frequency FROM table_name_79 WHERE sspec_number = \"sl3bn(kc0)sl3e9(kc0)\"",
+  "pred": "SELECT frequency FROM table_name_79 WHERE sspec_number = \"sl3bn(kc0)sl3e9(kc0)\""
+ },
+ {
+  "question": "How many entrants did the events won by Frank Gary average?",
+  "gold": "SELECT AVG(entrants) FROM table_name_21 WHERE winner = \"frank gary\"",
+  "pred": "SELECT AVG(entrants) FROM table_name_21 WHERE winner = \"frank gary\""
+ },
+ {
+  "question": "How many different variants are there for Northern Counties bodybuilder?",
+  "gold": "SELECT COUNT(variant) FROM table_28035004_1 WHERE bodybuilder = \"Northern Counties\"",
+  "pred": "SELECT COUNT(variant) FROM table_28035004_1 WHERE bodybuilder = \"Northern Counties\""
+ },
+ {
+  "question": "What was the attendance on week 7?",
+  "gold": "SELECT attendance FROM table_name_26 WHERE week = 7",
+  "pred": "SELECT attendance FROM table_name_26 WHERE week = \"7\""
+ },
+ {
+  "question": "Who organized Alston Church?",
+  "gold": "SELECT organized_by FROM table_name_68 WHERE church_name = \"alston church\"",
+  "pred": "SELECT organized_by FROM table_name_68 WHERE church_name = \"alston church\""
+ },
+ {
+  "question": "What was the incumbent for texas 19?",
+  "gold": "SELECT incumbent FROM table_1341663_44 WHERE district = \"Texas 19\"",
+  "pred": "SELECT incumbent FROM table_1341663_44 WHERE district = \"Texas 19\""
+ },
+ {
+  "question": "How many people attended the match when Manchester United played against the Hearts?",
+  "gold": "SELECT SUM(attendance) FROM table_name_95 WHERE opponents = \"hearts\"",
+  "pred": "SELECT SUM(attendance) FROM table_name_95 WHERE opponents = \"hearts\""
+ },
+ {
+  "question": "What is the Sign-in/Bicker at wash50 on washington rd?",
+  "gold": "SELECT sign_in_bicker FROM table_name_27 WHERE location = \"wash50 on washington rd\"",
+  "pred": "SELECT sign_in_bicker FROM table_name_27 WHERE location = \"wash50 on washington rd\""
+ },
+ {
+  "question": "What league has a number less than 122, and least wins as the record?",
+  "gold": "SELECT league FROM table_name_38 WHERE number < 122 AND record = \"least wins\"",
+  "pred": "SELECT league FROM table_name_38 WHERE number < 122 AND record = \"least wins\""
+ },
+ {
+  "question": "How many rebounds per game did he have at the 2006 fiba world championship?",
+  "gold": "SELECT rebounds_per_game FROM table_2761641_1 WHERE tournament = \"2006 FIBA World Championship\"",
+  "pred": "SELECT rebounds_per_game FROM table_2761641_1 WHERE tournament = \"2006 FIBA World Championship\""
+ },
+ {
+  "question": "What is the Record for a game smaller than 24, Lundqvist was the decision, November less than 8, and opponent Was New York Islanders?",
+  "gold": "SELECT record FROM table_name_57 WHERE game < 24 AND decision = \"lundqvist\" AND november < 8 AND opponent = \"new york islanders\"",
+  "pred": "SELECT record FROM table_name_57 WHERE game < 24 AND decision = \"lundqvist\" AND november < 8 AND opponent = \"new york islanders\""
+ },
+ {
+  "question": "Which winner has a points classification of Tony Rominger at stage 17?",
+  "gold": "SELECT winner FROM table_name_72 WHERE points_classification = \"tony rominger\" AND stage = \"17\"",
+  "pred": "SELECT winner FROM table_name_72 WHERE points_classification = \"tony rominger\" AND stage = 17"
+ },
+ {
+  "question": "From which country was the player whose year(s) won was 1983?",
+  "gold": "SELECT country FROM table_name_9 WHERE year_s__won = \"1983\"",
+  "pred": "SELECT country FROM table_name_9 WHERE year_s__won = \"1983\""
+ },
+ {
+  "question": "In what season was 577 runs scored?",
+  "gold": "SELECT season FROM table_name_33 WHERE runs = \"577\"",
+  "pred": "SELECT season FROM table_name_33 WHERE runs = \"577\""
+ },
+ {
+  "question": "Which position is number 16?",
+  "gold": "SELECT position FROM table_name_7 WHERE number = 16",
+  "pred": "SELECT position FROM table_name_7 WHERE number = \"16\""
+ },
+ {
+  "question": "what are all the open 1st viii with u15 6th iv being bgs",
+  "gold": "SELECT open_1st_viii FROM table_11318462_5 WHERE u15_6th_iv = \"BGS\"",
+  "pred": "SELECT open_1st_viii FROM table_11318462_5 WHERE u15_6th_iv = \"BGS\""
+ },
+ {
+  "question": "What engine has the Mercedes AMG Petronas f1 team, and 93 points?",
+  "gold": "SELECT engine FROM table_name_1 WHERE entrant = \"mercedes amg petronas f1 team\" AND points = \"93\"",
+  "pred": "SELECT engine FROM table_name_1 WHERE entrant = \"mercedes amg petronas f1 team\" AND points = 93"
+ },
+ {
+  "question": "What is the role of the aircraft that has a registration of s5-hpb?",
+  "gold": "SELECT role FROM table_name_51 WHERE registration = \"s5-hpb\"",
+  "pred": "SELECT role FROM table_name_51 WHERE registration = \"s5-hpb\""
+ },
+ {
+  "question": "Find the zip code in which the average mean visibility is lower than 10.",
+  "gold": "SELECT zip_code FROM weather GROUP BY zip_code HAVING AVG(mean_visibility_miles) < 10",
+  "pred": "SELECT zip_code FROM weather WHERE mean_visibility_miles < 10"
+ },
+ {
+  "question": "When the total points are 22 how many total touchdowns have been made?",
+  "gold": "SELECT touchdowns FROM table_14342592_5 WHERE points = 22",
+  "pred": "SELECT COUNT(touchdowns) FROM table_14342592_5 WHERE points = 22"
+ },
+ {
+  "question": "How many Bangladeshis were admitted when 714 Nepalis and 13,575 Pakistanis were admitted?",
+  "gold": "SELECT AVG(bangladeshis_admitted) FROM table_name_23 WHERE nepalis_admitted = 714 AND pakistanis_admitted > 13 OFFSET 575",
+  "pred": "SELECT SUM(bangladeshis_admitted) FROM table_name_23 WHERE nepalis_admitted = 714 AND pakistanis_admitted = 13 OFFSET 575"
+ },
+ {
+  "question": "How many KEI catagories are listed when the economic incentive regime is 2.56? ",
+  "gold": "SELECT COUNT(kei) FROM table_23050383_1 WHERE economic_incentive_regime = \"2.56\"",
+  "pred": "SELECT COUNT(kei) FROM table_23050383_1 WHERE economic_incentive_regime = \"2.56\""
+ },
+ {
+  "question": "When was the 'first season of current spell in top division' if the first season in top division is in 1964-65?",
+  "gold": "SELECT first_season_of_current_spell_in_top_division FROM table_18143210_2 WHERE first_season_in_top_division = \"1964-65\"",
+  "pred": "SELECT first_season_of_current_spell_in_top_division FROM table_18143210_2 WHERE first_season_in_top_division = \"1964-65\""
+ },
+ {
+  "question": "Which visiting team wound up with a final score of 18-40?",
+  "gold": "SELECT visiting_team FROM table_name_77 WHERE final_score = \"18-40\"",
+  "pred": "SELECT visiting_team FROM table_name_77 WHERE final_score = \"18-40\""
+ },
+ {
+  "question": "How many races did he do in the year he had 8 points?",
+  "gold": "SELECT races FROM table_name_47 WHERE points = \"8\"",
+  "pred": "SELECT races FROM table_name_47 WHERE points = \"8\""
+ },
+ {
+  "question": "When Marlene was nominated for the Olivier Award, what was the result?",
+  "gold": "SELECT result FROM table_name_33 WHERE nominated_work = \"marlene\" AND award = \"olivier award\"",
+  "pred": "SELECT result FROM table_name_33 WHERE nominated_work = \"marlene\" AND award = \"oliver award\""
+ },
+ {
+  "question": "What event did he fight masato shiozawa?",
+  "gold": "SELECT event FROM table_name_82 WHERE opponent = \"masato shiozawa\"",
+  "pred": "SELECT event FROM table_name_82 WHERE opponent = \"masato shiozawa\""
+ },
+ {
+  "question": "How tall is Dylan Postl?",
+  "gold": "SELECT height FROM table_name_69 WHERE name = \"dylan postl\"",
+  "pred": "SELECT height FROM table_name_69 WHERE name = \"dylan postl\""
+ },
+ {
+  "question": "What's the Gold that also has Bronze of Kim Sun-Bin?",
+  "gold": "SELECT gold FROM table_name_61 WHERE bronze = \"kim sun-bin\"",
+  "pred": "SELECT gold FROM table_name_61 WHERE bronze = \"kim sun-bin\""
+ },
+ {
+  "question": "What country does the player who joined the Vancouver Canucks originally hail from?",
+  "gold": "SELECT nationality FROM table_2886617_4 WHERE nhl_team = \"Vancouver Canucks\"",
+  "pred": "SELECT nationality FROM table_2886617_4 WHERE nhl_team = \"Vancouver Canucks\""
+ },
+ {
+  "question": "What's the total starts with more points than 1 and the driver is Nasser Al-Attiyah?",
+  "gold": "SELECT COUNT(starts) FROM table_name_47 WHERE driver = \"nasser al-attiyah\" AND points > 1",
+  "pred": "SELECT COUNT(starts) FROM table_name_47 WHERE driver = \"nasser al-attiyah\" AND points > 1"
+ },
+ {
+  "question": "What is the grid total for bruce mclaren with over 73 laps?",
+  "gold": "SELECT SUM(grid) FROM table_name_14 WHERE laps > 73 AND driver = \"bruce mclaren\"",
+  "pred": "SELECT SUM(grid) FROM table_name_14 WHERE laps > 73 AND driver = \"bruce mclaren\""
+ },
+ {
+  "question": "Find the average age of female (sex is F) students who have secretary votes in the spring election cycle.",
+  "gold": "SELECT AVG(T1.Age) FROM STUDENT AS T1 JOIN VOTING_RECORD AS T2 ON T1.StuID = SECRETARY_Vote WHERE T1.Sex = \"F\" AND T2.Election_Cycle = \"Spring\"",
+  "pred": "SELECT AVG(T1.Age) FROM STUDENT AS T1 JOIN VOTING_RECORD AS T2 ON T1.StuID = T2.Voter_ID WHERE T1.Sex = \"F\" AND T2.Election_Cycle = \"Spring\""
+ },
+ {
+  "question": "how many models produced where the plant is castle bromwich?",
+  "gold": "SELECT COUNT(models_produced) FROM table_250309_1 WHERE plant = \"Castle Bromwich\"",
+  "pred": "SELECT COUNT(models_produced) FROM table_250309_1 WHERE plant = \"Castle Bromwich\""
+ },
+ {
+  "question": "What is the total for the team with more than 2 golds and more than 0 bronze?",
+  "gold": "SELECT SUM(total) FROM table_name_37 WHERE gold > 2 AND bronze > 0",
+  "pred": "SELECT SUM(total) FROM table_name_37 WHERE gold > 2 AND bronze > 0"
+ },
+ {
+  "question": "Which professionals live in a city containing the substring 'West'? List his or her role, street, city and state.",
+  "gold": "SELECT role_code, street, city, state FROM professionals WHERE city LIKE '%West%'",
+  "pred": "SELECT role_code, street, city, state FROM professionals WHERE city LIKE '%West%'"
+ },
+ {
+  "question": "What is the mission for switzerland as a resident County?",
+  "gold": "SELECT mission FROM table_name_16 WHERE resident_country = \"switzerland\"",
+  "pred": "SELECT mission FROM table_name_16 WHERE resident_country = \"switzerland\""
+ },
+ {
+  "question": "Name the league for conference finals",
+  "gold": "SELECT league FROM table_2553861_1 WHERE playoffs = \"Conference Finals\"",
+  "pred": "SELECT league FROM table_2553861_1 WHERE playoffs = \"Conference Finals\""
+ },
+ {
+  "question": "Which player has a total of 160?",
+  "gold": "SELECT player FROM table_name_19 WHERE total = 160",
+  "pred": "SELECT player FROM table_name_19 WHERE total = \"160\""
+ },
+ {
+  "question": "Which money is the highest one that has a To par of \u20131, and a Score of 73-70-73-71=287?",
+  "gold": "SELECT MAX(money___) AS $__ FROM table_name_56 WHERE to_par = \"\u20131\" AND score = 73 - 70 - 73 - 71 = 287",
+  "pred": "SELECT MAX(money___) FROM table_name_56 WHERE to_par = \"\u20131\" AND score = \"73-70-73-71=287\""
+ },
+ {
+  "question": "How many people attended when the record was broken with 47\u201363?",
+  "gold": "SELECT attendance FROM table_name_38 WHERE record = \"47\u201363\"",
+  "pred": "SELECT attendance FROM table_name_38 WHERE record = \"47\u201363\""
+ },
+ {
+  "question": "What was the record at the game with a score of 21-16?",
+  "gold": "SELECT record FROM table_name_77 WHERE score = \"21-16\"",
+  "pred": "SELECT record FROM table_name_77 WHERE score = \"21-16\""
+ },
+ {
+  "question": "What was the score when Mark parterned with lorenzo manta?",
+  "gold": "SELECT score FROM table_name_19 WHERE partner = \"lorenzo manta\"",
+  "pred": "SELECT score FROM table_name_19 WHERE partner = \"mark\""
+ },
+ {
+  "question": "Which Oberliga S\u00fcdwest has an Oberliga Bayern of fc schweinfurt 05?",
+  "gold": "SELECT oberliga_s\u00fcdwest FROM table_name_82 WHERE oberliga_bayern = \"fc schweinfurt 05\"",
+  "pred": "SELECT oberliga_s\u00fcdwest FROM table_name_82 WHERE oberliga_bayern = \"fc schweinfurt 05\""
+ },
+ {
+  "question": "Name the runner-up for algarve tournament",
+  "gold": "SELECT runner_up FROM table_name_40 WHERE tournament = \"algarve\"",
+  "pred": "SELECT runner_up FROM table_name_40 WHERE tournament = \"algarve\""
+ },
+ {
+  "question": "What was the Liberal Party result from the election having a Conservative Party result of 16 (-1) and Labour of 6 (+2)?",
+  "gold": "SELECT liberal_party FROM table_name_97 WHERE conservative_party = \"16 (-1)\" AND labour_party = \"6 (+2)\"",
+  "pred": "SELECT liberal_party FROM table_name_97 WHERE conservative_party = \"16 (-1)\" AND labour_party = \"6 (+2)\""
+ },
+ {
+  "question": "Which record has a score of 7\u20136 (12)?",
+  "gold": "SELECT record FROM table_name_77 WHERE score = \"7\u20136 (12)\"",
+  "pred": "SELECT record FROM table_name_77 WHERE score = \"7\u20136 (12)\""
+ },
+ {
+  "question": "What was the airdate of the episode with 106000 dave ja vu viewers?",
+  "gold": "SELECT airdate FROM table_25721_3 WHERE dave_ja_vu_viewers = 106000",
+  "pred": "SELECT airdate FROM table_25721_3 WHERE dave_ja_vu_viewers = \"106000\""
+ },
+ {
+  "question": "What position does the winner from Ohio State with 412 points play?",
+  "gold": "SELECT position FROM table_name_38 WHERE school = \"ohio state\" AND points = \"412\"",
+  "pred": "SELECT position FROM table_name_38 WHERE school = \"ohio state\" AND points = 412"
+ },
+ {
+  "question": "What Time elapsed has both the Launched of 15 October 1997 and the Closest approach of 24 June 1999?",
+  "gold": "SELECT time_elapsed FROM table_name_52 WHERE launched = \"15 october 1997\" AND closest_approach = \"24 june 1999\"",
+  "pred": "SELECT time_elapsed FROM table_name_52 WHERE launched = \"15 october 1997\" AND closest_approach = \"24 june 1999\""
+ },
+ {
+  "question": "What is the frequency for the station with DYBT as its callsign?",
+  "gold": "SELECT frequency FROM table_name_53 WHERE callsign = \"dybt\"",
+  "pred": "SELECT frequency FROM table_name_53 WHERE callsign = \"dybt\""
+ },
+ {
+  "question": "List the name and date the battle that has lost the ship named 'Lettice' and the ship named 'HMS Atalanta'",
+  "gold": "SELECT T1.name, T1.date FROM battle AS T1 JOIN ship AS T2 ON T1.id = T2.lost_in_battle WHERE T2.name = 'Lettice' INTERSECT SELECT T1.name, T1.date FROM battle AS T1 JOIN ship AS T2 ON T1.id = T2.lost_in_battle WHERE T2.name = 'HMS Atalanta'",
+  "pred": "SELECT T2.name, T2.date FROM ship AS T1 JOIN battle AS T2 ON T1.lost_in_battle = T2.id WHERE T1.name = \"Lettice\" AND T1.name = \"HMS Atalanta\""
+ },
+ {
+  "question": "What is the number of rounds that took place for the fight that lasted 6:21?",
+  "gold": "SELECT COUNT(round) FROM table_name_1 WHERE time = \"6:21\"",
+  "pred": "SELECT COUNT(round) FROM table_name_1 WHERE time = \"6:21\""
+ },
+ {
+  "question": "What is the smallest crowd that Footscray had as the away team?",
+  "gold": "SELECT MIN(crowd) FROM table_name_49 WHERE away_team = \"footscray\"",
+  "pred": "SELECT MIN(crowd) FROM table_name_49 WHERE away_team = \"footscray\""
+ },
+ {
+  "question": "What country is the Eurasia Astana team from?",
+  "gold": "SELECT country FROM table_name_69 WHERE team = \"eurasia astana\"",
+  "pred": "SELECT country FROM table_name_69 WHERE team = \"eurasia astana\""
+ },
+ {
+  "question": "What was the constructor when Jack Brabham was the driver at the Monaco Grand Prix?",
+  "gold": "SELECT constructor FROM table_name_46 WHERE winning_driver = \"jack brabham\" AND race = \"monaco grand prix\"",
+  "pred": "SELECT constructor FROM table_name_46 WHERE winning_driver = \"jack brabham\" AND race = \"monaco grand prix\""
+ },
+ {
+  "question": "How many points were there when the try bonus was 2?",
+  "gold": "SELECT points FROM table_name_35 WHERE try_bonus = \"2\"",
+  "pred": "SELECT COUNT(points) FROM table_name_35 WHERE try_bonus = \"2\""
+ },
+ {
+  "question": "How many percent of the votes in Debaca did McCain get?",
+  "gold": "SELECT mccain_percentage FROM table_20539826_1 WHERE county = \"DeBaca\"",
+  "pred": "SELECT mccain_percentage FROM table_20539826_1 WHERE county = \"Debaca\""
+ },
+ {
+  "question": "How many overalls has 1 combined and 24 downhills?",
+  "gold": "SELECT overall FROM table_name_9 WHERE combined = \"1\" AND downhill = \"24\"",
+  "pred": "SELECT COUNT(overall) FROM table_name_9 WHERE combined = \"1\" AND downhill = \"24\""
+ },
+ {
+  "question": "Name the song that has a track larger than 7 and means death.",
+  "gold": "SELECT recorded FROM table_name_83 WHERE track > 7 AND translation = \"death\"",
+  "pred": "SELECT recorded FROM table_name_83 WHERE track > 7 AND translation = \"death\""
+ },
+ {
+  "question": "What was the first week when there was an attendance over 75,007 at Mile High Stadium?",
+  "gold": "SELECT MIN(week) FROM table_name_21 WHERE game_site = \"mile high stadium\" AND attendance > 75 OFFSET 007",
+  "pred": "SELECT MIN(week) FROM table_name_21 WHERE game_site = \"mile high stadium\" AND attendance > 75 OFFSET 07"
+ },
+ {
+  "question": "Which Points is the highest one that has a Position of 5, and a Played smaller than 18?",
+  "gold": "SELECT MAX(points) FROM table_name_80 WHERE position = 5 AND played < 18",
+  "pred": "SELECT MAX(points) FROM table_name_80 WHERE position = \"5\" AND played < 18"
+ },
+ {
+  "question": "What is the date of the game when the opponent is the Cleveland Browns?",
+  "gold": "SELECT date FROM table_name_98 WHERE opponent = \"cleveland browns\"",
+  "pred": "SELECT date FROM table_name_98 WHERE opponent = \"cleveland browns\""
+ },
+ {
+  "question": "What is the lowest gold when there are 0 bronze and the total is less than 2, and silver is less than 0?",
+  "gold": "SELECT MIN(gold) FROM table_name_24 WHERE bronze = 0 AND total < 2 AND silver < 0",
+  "pred": "SELECT MIN(gold) FROM table_name_24 WHERE bronze = 0 AND total < 2 AND silver < 0"
+ },
+ {
+  "question": "What is the lowest number of points for Drivers that have raced in more than 16 Races?",
+  "gold": "SELECT MIN(points) FROM table_name_35 WHERE races > 16",
+  "pred": "SELECT MIN(points) FROM table_name_35 WHERE races > 16"
+ },
+ {
+  "question": "On what flight day was U2 played?",
+  "gold": "SELECT flight_day FROM table_name_2 WHERE artist = \"u2\"",
+  "pred": "SELECT flight_day FROM table_name_2 WHERE artist = \"u2\""
+ },
+ {
+  "question": "What City is the Jal hotel in?",
+  "gold": "SELECT city FROM table_name_77 WHERE name = \"jal hotel\"",
+  "pred": "SELECT city FROM table_name_77 WHERE name = \"jal\""
+ },
+ {
+  "question": "what is the country for geoff ogilvy?",
+  "gold": "SELECT country FROM table_name_88 WHERE player = \"geoff ogilvy\"",
+  "pred": "SELECT country FROM table_name_88 WHERE player = \"geoff ogilvy\""
+ },
+ {
+  "question": "Which Player has a Round larger than 5, and a School/Club Team of bethune-cookman?",
+  "gold": "SELECT player FROM table_name_52 WHERE round > 5 AND school_club_team = \"bethune-cookman\"",
+  "pred": "SELECT player FROM table_name_52 WHERE round > 5 AND school_club_team = \"bethune-cookman\""
+ },
+ {
+  "question": "Name the scores for  david baddiel and maureen lipman",
+  "gold": "SELECT COUNT(scores) FROM table_23575917_2 WHERE davids_team = \"David Baddiel and Maureen Lipman\"",
+  "pred": "SELECT scores FROM table_23575917_2 WHERE davids_team = \"David Baddiel and Maureen Lipman\""
+ },
+ {
+  "question": "How many tracks were Recorded 1964-01-08?",
+  "gold": "SELECT COUNT(track) FROM table_name_75 WHERE recorded = \"1964-01-08\"",
+  "pred": "SELECT COUNT(track) FROM table_name_75 WHERE recorded = \"1964-01-08\""
+ },
+ {
+  "question": "Who is the visitor with a record of 14\u201317\u20135?",
+  "gold": "SELECT visitor FROM table_name_54 WHERE record = \"14\u201317\u20135\"",
+  "pred": "SELECT visitor FROM table_name_54 WHERE record = \"14\u201317\u20135\""
+ },
+ {
+  "question": "When h.264 is 9.0, how much is vp9 ( webm )",
+  "gold": "SELECT vp9___webm__ FROM table_26099252_1 WHERE h264 = \"9.0\"",
+  "pred": "SELECT vp9___webm__ FROM table_26099252_1 WHERE h264 = \"9.0\""
+ },
+ {
+  "question": "Name the loss for 48-37",
+  "gold": "SELECT loss FROM table_name_54 WHERE record = \"48-37\"",
+  "pred": "SELECT loss FROM table_name_54 WHERE record = \"48-37\""
+ },
+ {
+  "question": "Name the episode for 18-49 rating being 3.6",
+  "gold": "SELECT COUNT(episode) FROM table_20971444_3 WHERE rating__18_49_ = \"3.6\"",
+  "pred": "SELECT episode FROM table_20971444_3 WHERE rating__18_49_ = \"3.6\""
+ },
+ {
+  "question": "What is the NBA draft for ohio state?",
+  "gold": "SELECT nba_draft FROM table_name_58 WHERE college = \"ohio state\"",
+  "pred": "SELECT nba_draft FROM table_name_58 WHERE college = \"ohio state\""
+ },
+ {
+  "question": "Which game has the highest score in October with 9?",
+  "gold": "SELECT MAX(october) FROM table_name_41 WHERE game = 9",
+  "pred": "SELECT MAX(october) FROM table_name_41 WHERE game = \"9\""
+ },
+ {
+  "question": "What was the crowd size on 4 july 1981, and a Away team of essendon?",
+  "gold": "SELECT crowd FROM table_name_41 WHERE date = \"4 july 1981\" AND away_team = \"essendon\"",
+  "pred": "SELECT crowd FROM table_name_41 WHERE date = \"4 july 1981\" AND away_team = \"essendon\""
+ },
+ {
+  "question": "I want to know the date with attendance of 35,763",
+  "gold": "SELECT date FROM table_name_88 WHERE attendance = \"35,763\"",
+  "pred": "SELECT date FROM table_name_88 WHERE attendance = \"35,763\""
+ },
+ {
+  "question": "What shows for Southbridge when the Model number is amd-640 chipset?",
+  "gold": "SELECT southbridge FROM table_name_7 WHERE model = \"amd-640 chipset\"",
+  "pred": "SELECT southbridge FROM table_name_7 WHERE model = \"amd-640 chipset\""
+ },
+ {
+  "question": "How may assists per game have 7.7 points per game?",
+  "gold": "SELECT assists_per_game FROM table_2387461_1 WHERE points_per_game = \"7.7\"",
+  "pred": "SELECT assists_per_game FROM table_2387461_1 WHERE points_per_game = \"7.7\""
+ },
+ {
+  "question": "What launched has mariner 4 as the spacecraft?",
+  "gold": "SELECT launched FROM table_name_17 WHERE spacecraft = \"mariner 4\"",
+  "pred": "SELECT launched FROM table_name_17 WHERE spacecraft = \"mariner 4\""
+ },
+ {
+  "question": "What is the german total population after 1910 with an other total of 143 and 32 hungarians?",
+  "gold": "SELECT german FROM table_name_59 WHERE year > 1910 AND other = \"143\" AND hungarian = \"32\"",
+  "pred": "SELECT COUNT(german) FROM table_name_59 WHERE year > 1910 AND other = \"143\" AND 32 = \"hungarian\""
+ },
+ {
+  "question": "What is the batting style of Makhaya Ntini?",
+  "gold": "SELECT batting_style FROM table_name_85 WHERE player = \"makhaya ntini\"",
+  "pred": "SELECT batting_style FROM table_name_85 WHERE player = \"makhaya ntini\""
+ },
+ {
+  "question": "Name the record for rose garden 20,565 attendance",
+  "gold": "SELECT record FROM table_23286158_8 WHERE location_attendance = \"Rose Garden 20,565\"",
+  "pred": "SELECT record FROM table_23286158_8 WHERE location_attendance = \"Rose Garden 20,565\""
+ },
+ {
+  "question": "What date had the patent number US plant patent 12098?",
+  "gold": "SELECT date FROM table_name_97 WHERE plant_patent_number = \"us plant patent 12098\"",
+  "pred": "SELECT date FROM table_name_97 WHERE plant_patent_number = \"us plant patent 12098\""
+ },
+ {
+  "question": "What Circuit has a Winning constructor of bugatti, and a Winning driver of edward bret?",
+  "gold": "SELECT circuit FROM table_name_20 WHERE winning_constructor = \"bugatti\" AND winning_driver = \"edward bret\"",
+  "pred": "SELECT circuit FROM table_name_20 WHERE winning_constructor = \"bugatti\" AND winning_driver = \"edward bret\""
+ },
+ {
+  "question": "Who was the Rookie of the Year for the Season in 2000?",
+  "gold": "SELECT rookie_of_the_year FROM table_name_72 WHERE season = 2000",
+  "pred": "SELECT rookie_of_the_year FROM table_name_72 WHERE season = \"2000\""
+ },
+ {
+  "question": "What district has 98 constituencies?",
+  "gold": "SELECT district FROM table_name_54 WHERE constituency_number = \"98\"",
+  "pred": "SELECT district FROM table_name_54 WHERE constituency_number = \"98\""
+ },
+ {
+  "question": "When did the home team of Richmond play?",
+  "gold": "SELECT date FROM table_name_89 WHERE home_team = \"richmond\"",
+  "pred": "SELECT date FROM table_name_89 WHERE home_team = \"richmond\""
+ },
+ {
+  "question": "What is the origin of the one whose final destination is Brandholmen?",
+  "gold": "SELECT origin FROM table_name_15 WHERE final_destination = \"brandholmen\"",
+  "pred": "SELECT origin FROM table_name_15 WHERE final_destination = \"brandholmen\""
+ },
+ {
+  "question": "In the game at Victoria Park, what was the number of people in the crowd?",
+  "gold": "SELECT SUM(crowd) FROM table_name_34 WHERE venue = \"victoria park\"",
+  "pred": "SELECT AVG(crowd) FROM table_name_34 WHERE venue = \"victoria park\""
+ },
+ {
+  "question": "Who was the director of the Series 1 episode?",
+  "gold": "SELECT directed_by FROM table_11951237_1 WHERE series__number = 1",
+  "pred": "SELECT directed_by FROM table_11951237_1 WHERE series__number = \"Series 1\""
+ },
+ {
+  "question": "What are the modern equivalents for the province of \"hanju\"?",
+  "gold": "SELECT modern_equivalent FROM table_160510_1 WHERE province = \"Hanju\"",
+  "pred": "SELECT modern_equivalent FROM table_160510_1 WHERE province = \"Hanju\""
+ },
+ {
+  "question": "Name the high reobounds for april 7",
+  "gold": "SELECT high_rebounds FROM table_17058178_11 WHERE date = \"April 7\"",
+  "pred": "SELECT high_rebounds FROM table_17058178_11 WHERE date = \"April 7\""
+ },
+ {
+  "question": "What is the name of the team with a finish of 19?",
+  "gold": "SELECT team FROM table_name_48 WHERE finish = \"19\"",
+  "pred": "SELECT team FROM table_name_48 WHERE finish = \"19\""
+ },
+ {
+  "question": "Date of 8 july 1994 involves which performer 1?",
+  "gold": "SELECT performer_1 FROM table_name_31 WHERE date = \"8 july 1994\"",
+  "pred": "SELECT performer_1 FROM table_name_31 WHERE date = \"8 july 1994\""
+ },
+ {
+  "question": "What is the fixed charge for the user with a unit/time range of i-2: peak (18:30-22:30)?",
+  "gold": "SELECT fixed_charge___rs__kwh_ FROM table_25479607_3 WHERE unit__kwh__time_range = \"I-2: Peak (18:30-22:30)\"",
+  "pred": "SELECT fixed_charge___rs__kwh_ FROM table_25479607_3 WHERE unit__kwh__time_range = \"i-2: Peak (18:30-22:30)\""
+ },
+ {
+  "question": "What date was the record 21-11?",
+  "gold": "SELECT date FROM table_name_43 WHERE record = \"21-11\"",
+  "pred": "SELECT date FROM table_name_43 WHERE record = \"21-11\""
+ },
+ {
+  "question": "Which engine(s) has a year of 1966, and a point of 42.",
+  "gold": "SELECT engine_s_ FROM table_name_57 WHERE year = 1966 AND points = \"42\"",
+  "pred": "SELECT engine_s_ FROM table_name_57 WHERE year = \"1966\" AND points = \"42\""
+ },
+ {
+  "question": "Name the october 15, 2004 catalogue",
+  "gold": "SELECT catalogue FROM table_name_48 WHERE date = \"october 15, 2004\"",
+  "pred": "SELECT catalogue FROM table_name_48 WHERE date = \"october 15, 2004\""
+ },
+ {
+  "question": "Which Tuesday has a Saturday of \u571f\u66dc\u65e5 doy\u014dbi?",
+  "gold": "SELECT tuesday FROM table_name_94 WHERE saturday = \"\u571f\u66dc\u65e5 doy\u014dbi\"",
+  "pred": "SELECT tuesday FROM table_name_94 WHERE saturday = \"\u571f\u66dc\u65e5 doy\u014dbi\""
+ },
+ {
+  "question": "I want the constructor for grid less than 20 and Laps of 6",
+  "gold": "SELECT constructor FROM table_name_68 WHERE grid < 20 AND laps = 6",
+  "pred": "SELECT constructor FROM table_name_68 WHERE grid < 20 AND laps = 6"
+ },
+ {
+  "question": "How many Laps did Bob Wollek have?",
+  "gold": "SELECT AVG(laps) FROM table_name_5 WHERE driver = \"bob wollek\"",
+  "pred": "SELECT SUM(laps) FROM table_name_5 WHERE driver = \"bob wollek\""
+ },
+ {
+  "question": "What is the socked when the turbo is 8/8/10/11?",
+  "gold": "SELECT socket FROM table_name_40 WHERE turbo = \"8/8/10/11\"",
+  "pred": "SELECT socket FROM table_name_40 WHERE turbo = \"8/8/10/11\""
+ },
+ {
+  "question": "What is the sum of sliver medals when there were 2 gold medals, less than 15 total medals, and the rank is greater than 5?",
+  "gold": "SELECT SUM(silver) FROM table_name_88 WHERE gold = 2 AND total < 15 AND rank > 5",
+  "pred": "SELECT SUM(silver) FROM table_name_88 WHERE gold = 2 AND total < 15 AND rank > 5"
+ },
+ {
+  "question": "What is the English title for season 6?",
+  "gold": "SELECT title__english_ FROM table_name_91 WHERE number_of_season = 6",
+  "pred": "SELECT title__english_ FROM table_name_91 WHERE number_of_season = \"6\""
+ },
+ {
+  "question": "What position shows for canada, and an NHL team of new york islanders, and a Pick # of 113?",
+  "gold": "SELECT position FROM table_name_29 WHERE nationality = \"canada\" AND nhl_team = \"new york islanders\" AND pick__number = \"113\"",
+  "pred": "SELECT position FROM table_name_29 WHERE nationality = \"canada\" AND nhl_team = \"new york islanders\" AND pick__number = 113"
+ },
+ {
+  "question": "Tell me the 2008 of 2001 olympic games",
+  "gold": "SELECT 2008 FROM table_name_69 WHERE 2011 = \"olympic games\"",
+  "pred": "SELECT 2008 FROM table_name_69 WHERE 2001 = \"olympic games\""
+ },
+ {
+  "question": "Count the Number of electorates (2009) that has a District of fatehpur and  jahanabad?",
+  "gold": "SELECT SUM(number_of_electorates__2009_) FROM table_name_11 WHERE district = \"fatehpur\" AND name = \"jahanabad\"",
+  "pred": "SELECT SUM(number_of_electorates__2009_) FROM table_name_11 WHERE district = \"fatehpur and jahanabad\" AND name = \"name\""
+ },
+ {
+  "question": "after 1987 and entrant of first racing what is the highest points?",
+  "gold": "SELECT MAX(points) FROM table_name_69 WHERE entrant = \"first racing\" AND year > 1987",
+  "pred": "SELECT MAX(points) FROM table_name_69 WHERE entrant = \"first racing\" AND year > 1987"
+ },
+ {
+  "question": "What date has dallas cowboys as the opponent?",
+  "gold": "SELECT date FROM table_name_91 WHERE opponent = \"dallas cowboys\"",
+  "pred": "SELECT date FROM table_name_91 WHERE opponent = \"dallas cowboys\""
+ },
+ {
+  "question": "What are the names listed in the family  il-1f2?",
+  "gold": "SELECT name FROM table_29871617_1 WHERE family_name = \"IL-1F2\"",
+  "pred": "SELECT name FROM table_29871617_1 WHERE family_name = \"IL-1F2\""
+ },
+ {
+  "question": "Where did Footscray play as the home team?",
+  "gold": "SELECT venue FROM table_name_41 WHERE home_team = \"footscray\"",
+  "pred": "SELECT venue FROM table_name_41 WHERE home_team = \"footscray\""
+ },
+ {
+  "question": "Name the party with edward boland",
+  "gold": "SELECT party FROM table_1341865_23 WHERE incumbent = \"Edward Boland\"",
+  "pred": "SELECT party FROM table_1341865_23 WHERE incumbent = \"Edward Boland\""
+ },
+ {
+  "question": "What is the score of the tournament with younes el aynaoui as the opponent?",
+  "gold": "SELECT score FROM table_name_37 WHERE opponent = \"younes el aynaoui\"",
+  "pred": "SELECT score FROM table_name_37 WHERE opponent = \"younes el aynaoui\""
+ },
+ {
+  "question": "What were the notes when his position was 10th?",
+  "gold": "SELECT notes FROM table_name_2 WHERE position = \"10th\"",
+  "pred": "SELECT notes FROM table_name_2 WHERE position = \"10th\""
+ },
+ {
+  "question": "How many viewers watched the episode written by shana goldberg-meehan & greg malins? ",
+  "gold": "SELECT us_viewers__million_ FROM table_27403436_1 WHERE written_by = \"Shana Goldberg-Meehan & Greg Malins\"",
+  "pred": "SELECT us_viewers__million_ FROM table_27403436_1 WHERE written_by = \"Shana Goldberg-Meehan & Greg Malins\""
+ },
+ {
+  "question": "When was the record of 0-1 set?",
+  "gold": "SELECT date FROM table_13258806_2 WHERE record = \"0-1\"",
+  "pred": "SELECT date FROM table_13258806_2 WHERE record = \"0-1\""
+ },
+ {
+  "question": "What was the away teams score at Princes Park?",
+  "gold": "SELECT away_team AS score FROM table_name_37 WHERE venue = \"princes park\"",
+  "pred": "SELECT away_team AS score FROM table_name_37 WHERE venue = \"princes park\""
+ },
+ {
+  "question": "What is the Airline when the notes show aoc 135?",
+  "gold": "SELECT airline FROM table_name_51 WHERE notes = \"aoc 135\"",
+  "pred": "SELECT airline FROM table_name_51 WHERE notes = \"aoc 135\""
+ },
+ {
+  "question": "What is the lowest area when the density is greater than 234.77, the population is less than 965,040, and the rank is 32?",
+  "gold": "SELECT MIN(area) FROM table_name_75 WHERE density > 234.77 AND rank = 32 AND population < 965 OFFSET 040",
+  "pred": "SELECT MIN(area) FROM table_name_75 WHERE density > 234.77 AND population < 965 OFFSET 040 AND rank = 32"
+ },
+ {
+  "question": "Which Opponents have a Team of arsenal, and a Year of 1963\u201364?",
+  "gold": "SELECT opponents FROM table_name_49 WHERE team = \"arsenal\" AND year = \"1963\u201364\"",
+  "pred": "SELECT opponents FROM table_name_49 WHERE team = \"arsenal\" AND year = \"1963\u201364\""
+ },
+ {
+  "question": "Which Scottish Cup has a League smaller than 561, Years of 1989\u20131995 1997\u20132001, and Europe smaller than 11?",
+  "gold": "SELECT COUNT(scottish_cup) FROM table_name_22 WHERE league < 561 AND years = \"1989\u20131995 1997\u20132001\" AND europe < 11",
+  "pred": "SELECT scottish_cup FROM table_name_22 WHERE league < 561 AND years = \"1989\u20131995 1997\u20132001\" AND europe < 11"
+ },
+ {
+  "question": "What was the 2nd event aired on 8 June 2008?",
+  "gold": "SELECT event_2 FROM table_name_32 WHERE air_date = \"8 june 2008\"",
+  "pred": "SELECT event_2 FROM table_name_32 WHERE air_date = \"8 june 2008\""
+ },
+ {
+  "question": "Which Opponent has a Round larger than 1, and an Event of king of the cage 31?",
+  "gold": "SELECT opponent FROM table_name_3 WHERE round > 1 AND event = \"king of the cage 31\"",
+  "pred": "SELECT opponent FROM table_name_3 WHERE round > 1 AND event = \"king of the cage 31\""
+ },
+ {
+  "question": "what is the continent in which the country russia is listed?",
+  "gold": "SELECT continent FROM table_27435931_1 WHERE country = \"Russia\"",
+  "pred": "SELECT continent FROM table_27435931_1 WHERE country = \"Russia\""
+ }
+]
