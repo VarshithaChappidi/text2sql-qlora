@@ -37,6 +37,7 @@ Normalized exact match undercounts accuracy, because it rejects SQL that is vali
 
 ## Limitations
 - Exact-match scoring, not execution accuracy. The dataset has no table contents, so queries can't be run. A next step is execution-based evaluation on Spider.
+- SQL normalization is a lightweight string-based comparison, not a SQL parser; it handles selected formatting differences and predicate ordering but may not recognize all equivalent queries or correctly handle every complex expression.
 - Gold labels contain ambiguity and typos, which caps achievable scores.
 - The error analysis covers 12 of 68 misses.
 - Not compared against a prompted frontier model.
