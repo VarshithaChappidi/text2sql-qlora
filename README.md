@@ -47,3 +47,7 @@ Normalized exact match undercounts accuracy, because it rejects SQL that is vali
 1. Open `notebooks/` in Google Colab and select a T4 GPU runtime.
 2. Run the cells in order: install, data split, baseline, training, evaluation.
 3. Predictions are saved in `results/base_preds.json` and `results/ft_preds.json`.
+
+## Portfolio
+
+Explore my AI engineering experience, projects, and publication on my [live portfolio](https://varshithaportfolio-ai-engineer.vercel.app).
